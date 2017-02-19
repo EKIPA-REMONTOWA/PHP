@@ -99,7 +99,6 @@ ol{
 }
 li{
 	border-radius: 8px;
-	height: 50px;
 	width: 15.1%;
 	margin: 10px 0px 10px 10px;
 	float: left;
@@ -115,6 +114,11 @@ li:hover{
 	cursor: pointer;
 	background: linear-gradient(to bottom right, #7c8ab1, #3c4971);
 	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
+}
+li.menu{
+    width: 50px;
+    height: 50px;
+    background-color: red;
 }
 ol > li > ul{
 	padding: 18px 0px 0px 0px;
