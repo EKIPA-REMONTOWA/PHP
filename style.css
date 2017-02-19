@@ -1,0 +1,191 @@
+*{
+	font-family: 'VT323', monospace;
+	box-sizing: border-box;
+}
+a:link {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    margin: 0;
+}
+h1{
+    font-size: 50px;
+	text-decoration: underline;
+}
+hr{
+    margin: 0 50px;
+}
+p{
+    margin: 30px;
+    font-size: 20px;
+	text-indent: 50px;
+}
+p:first-letter{
+    font-size: 200%;
+}
+html, body{
+	background-image: url(images/plytka.jpg); 
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+	background-position: center center;
+}
+.fullcontainer{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+34,000000+100&1+1,0+30,0+70,1+100 */
+	background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 34%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 34%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */  
+	width: 100%;
+	padding-bottom: 20px;
+	min-height: 100%;
+}
+/* ----- TOP ------- */
+.container{
+	margin: 0 auto;
+	width: 800px;
+}
+.logo{
+	width: 303px;
+	height: 200px;
+	margin: 0 auto;
+	padding: 30px;
+}
+.slonik{
+	width: 211px;
+	height: 140px;
+	background-image: url(images/slonik.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+/* ----- TOP end---- */
+/* ------ MENU ------ */
+.menu-bg{
+	border-radius: 8px;
+	height: 70px;
+	width: 800px;
+	background: linear-gradient(to bottom right, rgba(23, 102, 45, 1), rgb(20, 90, 39));
+	border: 2px solid #44b973;
+}
+ol{
+	border-radius: 8px;
+	height: 70px;
+	width: 800px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-top: -70px;
+}
+li{
+	border-radius: 8px;
+	height: 50px;
+	width: 15.1%;
+	margin: 10px 0px 10px 10px;
+	float: left;
+	background: linear-gradient(to bottom right, #93a5d5, #4b5c92);
+	box-shadow: 3px 3px 1.5px #eff2f8 inset;
+	text-align: center;
+	border: 3px solid #000;
+	font-size: 25px;
+	padding-top: 5px;
+	display: block;
+}
+li:hover{
+	cursor: pointer;
+	background: linear-gradient(to bottom right, #7c8ab1, #3c4971);
+	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
+}
+ol > li > ul{
+	padding: 18px 0px 0px 0px;
+	display: none;
+	width: 120px;
+	position: absolute;
+}
+ol > li:hover > ul{
+	display: block;
+	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
+}
+ol > li > ul > li{
+	margin: 2px -3px;
+	width: 120px;
+	height: 50px;
+	text-shadow: none;
+	position: relative;
+	z-index: 999;
+}
+.maska{
+	width: 120px;
+	height: 50px;
+	position: absolute;
+}
+/* ------ MENU end--- */
+/* ------ CONTENT -------- */
+.content{
+	width: 800px;
+	background-color: rgba(255,255,255,0.6);
+	min-height: 500px;
+	margin: 20px 0px 0px 0px;
+	border-radius: 8px;
+}
+li.lisContent{
+	border: none;
+	display: list-item;
+	background: none;
+	width: 100%;
+	margin: 5px 0px;
+	padding: 0;
+	text-align: left;
+	box-shadow: none;
+}
+ul.lisContent > li:hover{
+	text-shadow: none;
+	cursor: none;
+}
+ul.lisContent{
+	list-style-type: circle;
+	height: 1000px;
+	margin: 20px;
+}
+/* ------ CONTENT end----- */
+.movie{
+	min-height: 500px;
+	width: 800px;
+	background-color: rgba(255,255,255,0);
+	margin: 20px 0px 0px 0px;
+	padding-top: 92.5px;
+	text-align: center;
+}
+.footer{
+	border-radius: 8px;
+	height: 50px;
+	width: 800px;
+	background: linear-gradient(to bottom right, rgba(23, 102, 45, 1), rgb(20, 90, 39));
+	border: 2px solid #44b973;
+	margin-top: 20px;
+	text-align: center;
+}
+.ft{
+	margin-top: 9px;
+	display: block;
+}
