@@ -189,3 +189,15 @@ ul.lisContent{
 	margin-top: 9px;
 	display: block;
 }
+.content-text{
+    padding: 20px;
+    text-align: center;
+}
+.button{
+	border-radius: 8px;
+	height: 50px;
+	background: linear-gradient(to bottom right, #93a5d5, #4b5c92);
+	box-shadow: 3px 3px 1.5px #eff2f8 inset;
+	border: 3px solid #000;
+	font-size: 25px;
+}
