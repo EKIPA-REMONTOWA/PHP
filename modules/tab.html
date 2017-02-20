@@ -1,0 +1,45 @@
+<h1>Tablice</h1>
+	<li class="lisContent">Wstęp</li>
+		<p>Tablice są bardzo specyficznym typem zmiennych – są to, najprościej mówiąc, zmienne zawierające w sobie uporządkowany zbiór zmiennych. Do zmiennych tych uzyskuje się dostęp przez liczbę w nawiasie kwadratowym podane bezpośrednio po nazwie zmiennej – tablicy. Liczba ta to tak zwany indeks – numer kolejny zmiennej w tablicy. Tak samo przypisuje się wartość do tablicy.</p>
+	<li class="lisContent">Przykład 1.1 - Tworzenie tablic</li>
+	<div class="moretab">
+		<pre class="phpintab">
+&#60;?php
+$tablica[0] = "Wpis numer 0";
+$tablice[1] = "Wpis numer 1";
+$tablica[2] = "Wpis numer 2";
+echo $tablica[2]; // Wyświetlony zostanie napis "Wpis numer 2";
+?&#62;
+		</pre>
+	</div>
+		<p>Aby poprostu dodać kolejny wpis na końcu tabeli wystarczy przy przypisywaniu wartości nie wpisywać indeksu do nawiasów kwadratowych. Jeśli w ten sposób dodawane są wpisy do nowej tablicy, to pierwszy wpis ma indeks 0. Indeks można też podawać ze zmiennej, z innej tablicy czy funkcji – z dowolnego wyrażenia zwracającego wartość. </p>
+	<li class="lisContent">Przykład 1.2 - Indeksy tablic</li>
+	<div class="moretab">
+		<pre class="phpintab">
+&#60;?php
+$tab1[] = 1;
+$tab1[] = 0;
+$tab1[] = 3;
+$tab1[] = 2;
+$tab2[] = "Pierwszy";
+$tab2[] = "Drugi";
+$tab2[] = "Trzeci";
+$tab2[] = "Czwarty";
+echo $tab2[$tab1[2]];
+?&#62;
+		</pre>	
+	</div>
+		<p>Elementem tablicy może być każdy typ zmiennej (z innymi tablicami i obiektami włącznie).</p>
+<h1>Tablica asocjacyjna</h1>
+	<p>Drugim przykładem tablicy występującej w PHP jest tablica asocjacyjna (zwana też czasem haszem - hash table). Jest to rodzaj tablicy w której zamiast indeksów liczbowych używa się indetyfikatorów znakowych (kluczy):</p>
+		<li class="lisContent">Budowa tablicy asocjacyjnej</li>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+$tablica["imie"] = "Jan";
+$tablica["nazwisko"] = "Kowalski";
+$tablica["adres"] = "Polna 1";
+echo $tablica["imie"]." ".$tablica["nazwisko"].", ul. ".$tablica["adres"]."n";
+?&#62;
+			</pre>
+		</div>
