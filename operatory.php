@@ -9,11 +9,6 @@
 	<body>
 		<div class="fullcontainer">	
 			<div class="container">
-				<a href="index.html">
-					<div class="logo">
-						<div class="slonik"></div>
-					</div>
-				</a>
 				<?php 
 					include(dirname(__FILE__).'/modules/header.html');
 				?>
@@ -38,4 +33,5 @@
 			</div>
 		</div>
 	</body>
+	<script src="main.js"></script>
 </html>
