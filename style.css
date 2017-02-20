@@ -160,18 +160,16 @@ li.lisContent{
 }
 ul.lisContent > li:hover{
 	text-shadow: none;
-	cursor: none;
 }
 ul.lisContent{
 	list-style-type: circle;
-	height: 1000px;
 	margin: 20px;
 }
 /* ------ CONTENT end----- */
 .movie{
 	min-height: 500px;
 	width: 800px;
-	background-color: rgba(255,255,255,0);
+	background-color: rgba(255,255,255,0.6);
 	margin: 20px 0px 0px 0px;
 	padding-top: 92.5px;
 	text-align: center;
@@ -188,4 +186,18 @@ ul.lisContent{
 .ft{
 	margin-top: 9px;
 	display: block;
+}
+.moretab{
+	background-color: rgba(255,255,255,0.1);
+	width: 500px;
+	height: 250px;
+	overflow: auto;
+	border: 1px solid #000;
+	border-radius: 8px;
+	text-align: left;
+	font-size: 20px;
+}
+.phpintab{
+	margin: 0;
+	padding: 5px;
 }
