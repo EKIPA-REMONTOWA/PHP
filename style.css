@@ -144,7 +144,7 @@ ol > li > ul > li{
 .content{
 	width: 800px;
 	background-color: rgba(255,255,255,0.6);
-	min-height: 500px;
+	min-height: 600px;
 	margin: 20px 0px 0px 0px;
 	border-radius: 8px;
 }
@@ -163,6 +163,7 @@ ul.lisContent > li:hover{
 }
 ul.lisContent{
 	list-style-type: circle;
+	min-height: 600px;
 	margin: 20px;
 }
 /* ------ CONTENT end----- */
