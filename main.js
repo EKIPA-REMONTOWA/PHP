@@ -14,3 +14,7 @@ function mrugnij(onmouseover) {
 			}
 	}
 }
+function woosh(onmouseover){
+    var snd = new Audio("sounds/woosh.wav");
+    snd.play();
+}
