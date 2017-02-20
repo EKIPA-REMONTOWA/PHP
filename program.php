@@ -9,11 +9,6 @@
 	<body>
 		<div class="fullcontainer">	
 			<div class="container">
-				<a href="index.html">
-					<div class="logo" onmouseover="mrugnij(true)" onmouseout="mrugnij(false)">
-						<div class="slonik"></div>
-					</div>
-				</a>
 				<?php 
 					include(dirname(__FILE__).'/modules/header.html');
 				?>
