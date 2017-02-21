@@ -96,6 +96,7 @@ ol{
 	padding: 0;
 	list-style-type: none;
 	margin-top: -70px;
+	text-align: center;
 }
 li.menu{
 	border-radius: 8px;
@@ -107,55 +108,58 @@ li.menu{
 	box-shadow: 3px 3px 1.5px #eff2f8 inset;
 	text-align: center;
 	border: 3px solid #000;
-	font-size: 25px;
 	padding-top: 5px;
     cursor: pointer;
 }
-button{
+li.menuBTN{
     background: linear-gradient(to bottom right, #93a5d5, #4b5c92);
     box-shadow: 3px 3px 1.5px #eff2f8 inset;
     border-radius: 8px;
     border: 3px solid #000;
     padding-top: 5px !important;
+	cursor: pointer;
+/*---------------------------------------*/
+	width: 15.2%;
+	height: 50px;
+	float: left;
+	margin: 10px 0px 10px 10px;
+	font-size: 25px;
 }
-li.button:hover{
+li.menuBTN:hover{
     background: linear-gradient(to bottom right, #6767a8, #38487b);
 	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
 }
-li.menu:nth-child(1){
-    z-index: 1000;
-}
-/*---- MENU BTN ------*/
-li.menuBTN{
-    width: 121px;
-    list-style-type: none;
-    margin-bottom: 5px;
-    margin-left: -3px;
-    margin-bottom: -15px;
-}
-.BTNmask{
-    width: inherit;
-    margin-top: 3px;
-}
-/*---- MENU BTN END---*/
-ol > li > ul{
-	padding: 18px 0px 0px 0px;
-	display: none; /*<============================= POKAŻ MENU NA STAŁĘ =====*/
+/*===============================================================================================*/
+li.smenuBTN{
+    background: linear-gradient(to bottom right, #93a5d5, #4b5c92);
+    box-shadow: 3px 3px 1.5px #eff2f8 inset;
+    border-radius: 8px;
+    border: 3px solid #000;
+    padding-top: 5px !important;
+	cursor: pointer;
+	text-shadow: none;
+/*---------------------------------------*/
 	width: 120px;
-	position: absolute;
+	height: 50px;
+	margin-left: -3px;
+	margin-top: 5px;
+}
+li.smenuBTN:hover{
+	background: linear-gradient(to bottom right, #6767a8, #38487b);
+	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
 }
 ol > li:hover > ul{
 	display: block;
-	text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #eff2f8;
 }
-ol > li > ul > li{
-	margin: 2px -3px;
-	width: 120px;
-	height: 50px;
-	text-shadow: none;
-	position: relative;
-	z-index: 999;
+ol > li > ul {
+	display: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-left: 0;
+	z-index: 1000;
+	position: absolute;
 }
+
 /* ------ MENU end--- */
 /* ------ CONTENT -------- */
 .content{
@@ -164,6 +168,7 @@ ol > li > ul > li{
 	min-height: 600px;
 	margin: 20px 0px 0px 0px;
 	border-radius: 8px;
+	padding: 20px;
 }
 li.lisContent{
 	border: none;
@@ -175,18 +180,15 @@ li.lisContent{
 	text-align: left;
 	box-shadow: none;
 }
-ul.lisContent > li:hover{
-	text-shadow: none;
-}
 ul.lisContent{
-	list-style-type: circle;
+	list-style-type: disc;
 	min-height: 600px;
 	margin: 20px;
+	font-size: 28px;
 }
 /* ------ CONTENT end----- */
 .movie{
 	min-height: 500px;
-	width: 800px;
 	background-color: rgba(255,255,255,0.6);
 	margin: 20px 0px 0px 0px;
 	padding-top: 92.5px;
@@ -231,4 +233,5 @@ ul.lisContent{
 	box-shadow: 3px 3px 1.5px #eff2f8 inset;
 	border: 3px solid #000;
 	font-size: 25px;
+	cursor: pointer;
 }
