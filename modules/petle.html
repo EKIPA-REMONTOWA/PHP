@@ -1,0 +1,68 @@
+<h1>Pętle</h1>
+	<li class="lisContent">Pętla FOR</li>
+		<p>Czasem zachodzi potrzeba wykonania jakiejś czynności określoną ilość razy. Z pomocą przychodzi jedna z najczęściej używanych składni w większości języków programowania, czyli pętla FOR. Ogólny zapis wygląda tak:</p>
+	<li class="lisContent">Przykład 1.1 - Pętla FOR</li>
+	<div class="moretab">
+		<pre class="phpintab">
+&#60;?php
+for( inicjalizacja zmiennych ; sprawdzenie warunku ; modyfikacja zmiennych) {
+
+   blok wyrażeń 
+
+}
+?&#62;
+		</pre>
+	</div>
+		<p>Jak widać, w tej pętli podaje się 3 wyrażenia jako parametry: inicjalizację zmiennych, czyli ustawienie początkowych wartości dla zmiennych kontrolujących pętlę, sprawdzenie warunku, czyli wyrażenie logiczne kontrolujące pętlę – pętla będzie wykonywana dopóki ten warunek jest prawdziwy, oraz modyfikację zmiennych kontrolujących pętlę – bez tego pętla będzie wykonywała się w nieskończoność (oczywiście wartość tych zmiennych można modyfikować wewnątrz pętli, ale jest to niezalecane). Przykład najprostszej pętli, która wypisze cyfry od 1 do 10: </p>
+	<li class="lisContent">Przykład 1.2 - Przykład użycia pętli for</li>
+	<div class="moretab">
+		<pre class="phpintab">
+&#60;?php
+for( $x = 1; $x &#60;= 10; $x++ )
+   echo $x."&#60;br&#62;";
+?&#62;
+		</pre>	
+	</div>
+<h1>Pętla while</h1>
+	<p>Innym rodzajem pętli jest pętla WHILE. Jest ona wykorzystywana w sytuacjach, kiedy niezbędne jest wykonywanie jakiejś operacji dopóki nie zostanie spełniony warunek.</p>
+		<li class="lisContent">Przykład 2.1 - Pętla while</li>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+
+while( warunek ){
+   ...
+   instrukcje
+   ...
+}
+?&#62;
+			</pre>
+		</div>
+			<p>Można na przykład za pomocą tej pętli zapisać odpowiednik pętli FOR z poprzedniego przykładu.</p>
+				<li class="lisContent">Przykład 2.2 - Przykład użycia pętli while</li>
+				<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+$x=1;
+while($x &#60;= 10){
+   echo $x."&#60;BR&#62;";
+   $x++;
+}
+?&#62;
+			</pre>
+		</div>
+<h1>Pętla do...while</h1>
+	<p>Odmianą pętli while jest pętla do…while. Od zwykłej pętli while różni się ona tym, że polecenia zawarte w pętli będą przynajmniej raz wykonane – w przypadku pętli while tak być nie musi, to znaczy jeśli za pierwszym razem warunek nie zostanie spełniony to polecenia z pętli nigdy nie zostaną wykonane. W przypadku tej pętli zostaną one wykonane przynajmniej ten pierwszy raz.</p>
+		<li class="lisContent">Przykład 3.1 - Pętla do...while</li>
+			<div class="moretab">
+		<pre class="phpintab">
+&#60;?php
+do {
+   ...
+   instrukcje
+   ...
+} while( warunek );
+
+?&#62;
+			</pre>
+		</div>
