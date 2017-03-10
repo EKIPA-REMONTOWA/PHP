@@ -235,3 +235,14 @@ ul.lisContent{
 	font-size: 25px;
 	cursor: pointer;
 }
+table{
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	font-size: 25px;
+}
+td{
+	text-align: center;
+	border: 1px solid black;
+	font-size: 25px;
+}

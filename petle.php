@@ -14,6 +14,9 @@
 					include(dirname(__FILE__).'/modules/header.html');
 				?>
 				<div class="content">
+					<?php
+					include(dirname(__FILE__).'/modules/petle.html');
+				?>
 				</div>
 				<?php
 					include(dirname(__FILE__).'/modules/footer.html');
