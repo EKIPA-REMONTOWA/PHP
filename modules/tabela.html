@@ -1,72 +1,200 @@
-<table>
-	<tr>
-		<th>Operator</th>
-		<th>Nazwa</th>
-		<th>Składnia</th>
-		<th>Opis</th>
-	</tr>
-	<tr>
-		<td>==</td>
-		<td rowspan="2">Równość</td>
-		<td>wyrażenie == wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli oba wyrażenia mają identyczną wartość.</td>
-	</tr>
-	<tr>
-		<td>===</td>
-		<td>wyrażenie === wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli oba wyrażenia mają identyczną wartość oraz typ.</td>
-	</tr>
-	<tr>
-		<td>!=</td>
-		<td rowspan="2">Nierówność</td>
-		<td>wyrażenie != wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli oba wyrażenia mają różne wartości.</td>
-	</tr>
-	<tr>
-		<td>!==</td>
-		<td>wyrażenie !== wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli oba wyrażenia mają różne wartości i/lub typ.</td>
-	</tr>
-	<tr>
-		<td>&#60;</td>
-		<td>Mniejsze niż</td>
-		<td>wyrażenie &#60; wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli lewe wyrażenie ma mniejszą wartość od prawego.</td>
-	</tr>
-	<tr>
-		<td>&#62;</td>
-		<td>Większe niż</td>
-		<td>wyrażenie &#62; wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli lewe wyrażenie ma większą wartość od prawego.</td>
-	</tr>
-	<tr>
-		<td>&#60;=</td>
-		<td>Mniejsze lub równe</td>
-		<td>wyrażenie &#60;= wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli lewe wyrażenie ma mniejszą lub równą wartość prawemu.</td>
-	</tr>
-	<tr>
-		<td>&#62;=</td>
-		<td>Większe lub równe</td>
-		<td>wyrażenie &#62;= wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli lewe wyrażenie ma większą lub równą wartość prawemu.</td>
-	</tr>
-	<tr>
-		<td>!</td>
-		<td>Negacja (nie)</td>
-		<td>!wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli wyrażenie jest fałszywe i fałsz, jeśli prawdziwe.</td>
-	</tr>
-	<tr>
-		<td>&#38;&#38;</td>
-		<td>Koniunkcja logiczna (i)</td>
-		<td>wyrażenie &#38;&#38; wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli oba wyrażenia są prawdziwe.</td>
-	</tr>
-	<tr>
-		<td>||</td>
-		<td>Alternatywa logiczna (lub)</td>
-		<td>wyrażenie || wyrażenie</td>
-		<td>Zwraca prawdę, jeżeli przynajmniej jedno z wyrażeń jest prawdziwe.</td>
-	</tr>
-</table>
+<h1>PHP/Instrukcja if</h1>
+	<p>Z tą instrukcją zetknęliśmy się już przy okazji omawiania formularzy. Przypomnijmy jeszcze raz ten przykład:</p>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+if(count($_GET) == 2)
+{
+   echo 'Witaj, '.$_GET['imie'].' '.$_GET['nazwisko'].'!';
+}
+else
+{
+   echo 'Nieprawidłowa liczba parametrów!';
+}
+?&#62;
+			</pre>	
+		</div>
+	<p>Instrukcja if pozwala na wykonanie części kodu tylko wtedy, kiedy spełniony jest określony warunek, oraz opcjonalne dodawanie alternatywnych instrukcji w razie jego fałszywości. Z if-a korzysta się niezwykle często, ponieważ niemal zawsze musimy sprawdzać, czy dane informacje są prawidłowe, czy funkcja poprawnie połączyła się z plikiem itd. Poniżej napiszemy skrypt, który będzie potrafił rozwiązywać równanie kwadratowe y=ax<sup>2</sup>+bx+c. Przypomnijmy, że ilość jego rozwiązań rzeczywistych zależy od wartości tzw. współczynnika Δ (Δ=b<sup>2</sup>-4ac). Jeżeli obliczony wynik (Δ) jest dodatni, istnieją dwa rozwiązania. Jeżeli ujemny - nie ma żadnych. Dla zera równanie daje jedno rozwiązanie (podwójne).</p>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+// 1
+if(!isset($_GET['a']))
+{
+$_GET['a'] = 0;
+}
+if(!isset($_GET['b']))
+{
+$_GET['b'] = 0;
+}
+if(!isset($_GET['c']))
+{
+$_GET['c'] = 0;
+}
+// 2
+if($_GET['a'] == 0)
+{
+die('Nieprawidłowy parametr A!');
+}
+// 3
+$delta = pow($_GET['b'], 2) - 4 * $_GET['a'] * $_GET['c'];
+// 4
+if($delta > 0)
+{
+// 5
+   echo 'Delta dodatnia. Dwa rozwiązania:<ul>';
+   echo '<li>'.round((-$_GET['b']-sqrt($delta))/(2*$_GET['a']), 5).'</li>';
+   echo '<li>'.round((-$_GET['b']+sqrt($delta))/(2*$_GET['a']), 5).'</li>';
+   echo '</ul>';
+}
+elseif($delta < 0)
+{
+// 6
+echo 'Delta ujemna. Brak rozwiązań w zbiorze liczb rzeczywistych!';
+}
+else
+{
+// 7
+echo 'Delta = 0. Jedno rozwiązanie: '.round((-$_GET['b'])/(2*$_GET['a']), 5);
+?&#62;
+			</pre>	
+		</div>
+	<p>Jest to pierwszy tak długi kod zawarty w tym podręczniku, dlatego omówimy go sobie w punktach. Numery odpowiednich fragmentów zaznaczone są w kodzie komentarzami jednolinijkowymi.</p>
+		<ul>
+			<li>
+				<p>Na początek sprawdzamy, czy użytkownik podał wszystkie parametry. Funkcja isset() zwraca wartość TRUE, jeżeli zmienna istnieje, a operator negacji (!) sugeruje, że kod w nawiasie chcemy wykonać wtedy, gdy tej zmiennej nie ma. Musimy wtedy podstawić za nią neutralną wartość 0, ponieważ inaczej skrypt będzie nam zgłaszać powiadomienia.</p>
+			</li>
+			<li>
+				<p>Tutaj zaczynamy właściwy algorytm. Najpierw sprawdzamy, czy rzeczywiście mamy do czynienia z równaniem kwadratowym. Parametr a musi być różny od zera. W razie problemów instrukcją die() zatrzymujemy skrypt w tym miejscu.</p>
+			</li>
+			<li>
+				<p>Liczymy współczynnik Δ. Funkcja pow(liczba, potega) podnosi podaną liczbę do odpowiedniej potęgi i działa szybciej, niż ręczne mnożenie wartości.</p>
+			</li>
+			<li>
+				<p>Pierwszy wariant - kiedy Δ jest dodatnia...</p>
+			</li>
+			<li>
+				<p>Oblicz każde z dwóch rozwiązań równania odpowiednim wzorem. Funkcja round(liczba, miejsca) zaokrągla nam wynik do określonej ilości miejsc po przecinku, natomiast sqrt(liczba) zwraca pierwiastek z podanej liczby. Zwróć uwagę na użycie nawiasów do zasugerowania właściwej kolejności działań.</p>
+			</li>
+			<li>
+				<p>Gdy Δ jest ujemna, równanie nie ma rozwiązania.</p>
+			</li>
+			<li>
+				<p>Ostatni z wariantów jest oczywisty, dlatego nie piszemy już warunku. To przecież ostatnia z możliwości. Równanie ma tylko jedno rozwiązanie i także je wyliczamy.</p>
+			</li>
+		</ul>
+	<p>Jest to nasz pierwszy prawdziwie dynamiczny skrypt, który potrafi reagować inaczej w zależności od sytuacji. Poznaliśmy tutaj nie tylko kilka nowych funkcji, ale także sporo operatorów i zasadę działania instrukcji if. Jej formalna składnia jest następująca:</p>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+if(wyrazenie)
+{
+// blok kodu
+}
+elseif(wyrazenie)
+{
+// blok kodu
+}
+else
+{
+// blok kodu
+}
+?&#62;
+			</pre>	
+		</div>
+	<p>Obowiązkowe jest podawanie pierwszego z członów zaczynającego się od if. Dwa pozostałe są opcjonalne, przy czym ilość elseif może być dowolna. Kolejność podawania kolejnych typów członów ukazana jest na przykładzie.</p>
+		<ul>
+			<li>
+				<p>if - wykonuje się, gdy spełniony został podany warunek</p>
+			</li>
+			<li>
+				<p>elseif - jeżeli nie został spełniony poprzedni warunek, PHP testuje aktualny i jeżeli jest prawdziwy, wykonuje ten kawałek kodu.</p>
+			</li>
+			<li>
+				<p>else - wykonywane, jeżeli żaden z powyższych warunków nie został spełniony.</p>
+			</li>
+		</ul>
+	<p>Jeżeli blok kodu zawiera tylko jedną instrukcję, PHP dopuszcza możliwość opuszczenia nawiasów klamrowych, np.</p>
+		<div class="moretab">
+			<pre class="phpintab">
+&#60;?php
+if($zmienna == 6)
+   echo 'Wartość zmiennej wynosi 6';
+?&#62;
+			</pre>	
+		</div>
+	<p>W tym podręczniku jednak nie będziemy jej stosować z powodu pogorszenia czytelności kodu, niemniej warto wiedzieć, iż składnia ta jest w pełni poprawna, ponieważ część programistów stosuje ją w praktyce.
+
+Wyrażenie warunkowe powinno przyjmować wartości logiczne TRUE lub FALSE. Oto kilka przydatnych operatorów:</p>
+		<table>
+			<tr>
+				<th>Operator</th>
+				<th>Nazwa</th>
+				<th>Składnia</th>
+				<th>Opis</th>
+			</tr>
+			<tr>
+				<td>==</td>
+				<td rowspan="2">Równość</td>
+				<td>wyrażenie == wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli oba wyrażenia mają identyczną wartość.</td>
+			</tr>
+			<tr>
+				<td>===</td>
+				<td>wyrażenie === wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli oba wyrażenia mają identyczną wartość oraz typ.</td>
+			</tr>
+			<tr>
+				<td>!=</td>
+				<td rowspan="2">Nierówność</td>
+				<td>wyrażenie != wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli oba wyrażenia mają różne wartości.</td>
+			</tr>
+			<tr>
+				<td>!==</td>
+				<td>wyrażenie !== wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli oba wyrażenia mają różne wartości i/lub typ.</td>
+			</tr>
+			<tr>
+				<td>&#60;</td>
+				<td>Mniejsze niż</td>
+				<td>wyrażenie &#60; wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli lewe wyrażenie ma mniejszą wartość od prawego.</td>
+			</tr>
+			<tr>
+				<td>&#62;</td>
+				<td>Większe niż</td>
+				<td>wyrażenie &#62; wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli lewe wyrażenie ma większą wartość od prawego.</td>
+			</tr>
+			<tr>
+				<td>&#60;=</td>
+				<td>Mniejsze lub równe</td>
+				<td>wyrażenie &#60;= wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli lewe wyrażenie ma mniejszą lub równą wartość prawemu.</td>
+			</tr>
+			<tr>
+				<td>&#62;=</td>
+				<td>Większe lub równe</td>
+				<td>wyrażenie &#62;= wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli lewe wyrażenie ma większą lub równą wartość prawemu.</td>
+			</tr>
+			<tr>
+				<td>!</td>
+				<td>Negacja (nie)</td>
+				<td>!wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli wyrażenie jest fałszywe i fałsz, jeśli prawdziwe.</td>
+			</tr>
+			<tr>
+				<td>&#38;&#38;</td>
+				<td>Koniunkcja logiczna (i)</td>
+				<td>wyrażenie &#38;&#38; wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli oba wyrażenia są prawdziwe.</td>
+			</tr>
+			<tr>
+				<td>||</td>
+				<td>Alternatywa logiczna (lub)</td>
+				<td>wyrażenie || wyrażenie</td>
+				<td>Zwraca prawdę, jeżeli przynajmniej jedno z wyrażeń jest prawdziwe.</td>
+			</tr>
+		</table>
