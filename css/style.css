@@ -42,7 +42,7 @@ p:first-letter{
     font-size: 200%;
 }
 html, body{
-	background-image: url(images/plytka.jpg); 
+	background-image: url(../images/plytka.jpg); 
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -74,7 +74,7 @@ html, body{
 .slonik{
 	width: 211px;
 	height: 140px;
-	background-image: url(images/slonik.png);
+	background-image: url(../images/slonik.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin: 0 auto;

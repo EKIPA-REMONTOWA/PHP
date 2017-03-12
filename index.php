@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
 	<head>
-		<meta charset="utf-8">
-    	<title>po prostu php</title>
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+		<?php
+					include(dirname(__FILE__).'/modules/head.html');
+		?>
 	</head>
 	<body>
 		<div class="fullcontainer">	
 			<div class="container">
-				<?php 
+				<?php
+					//Załączenie PHPem kodu z pliku html
 					include(dirname(__FILE__).'/modules/header.html');
 				?>
 				<div class="content">
 				</div>
 				<?php
+					//Załączenie PHPem kodu z pliku html
 					include(dirname(__FILE__).'/modules/footer.html');
 				?>
 			</div>
 		</div>
 	</body>
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
 </html>
