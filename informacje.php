@@ -12,11 +12,10 @@
 					include(dirname(__FILE__).'/modules/header.html');
 				?>
 				<div class="content">
-					<h1>Stronę wykonali:</h1>
-					<p style="font-size: 30px;">uczniowie z klasy 4ti</p>
-					<div style="margin-right: 30px; height: 120px;">
-						<span style="float: right; font-size: 40px;">W składzie:</span>
-						<h2 style="clear: both; float: right; font-size: 50px;">Kamil Różański</h2>
+					<h1>Stronę wykonał</h1>
+					<br>
+					<div style="height: 120px;">
+						<h2 style="font-size: 50px;">Kamil Różański z klasy 4ti</h2>
 					</div>
 					<p>
 						Źródła:<br>
