@@ -13,7 +13,7 @@
 				?>
 				<div class="content">
 					<?php
-					include(dirname(__FILE__).'/modules/tabela.html');
+					include(dirname(__FILE__).'/modules/warunki.html');
 				?>
 				</div>
 				<?php

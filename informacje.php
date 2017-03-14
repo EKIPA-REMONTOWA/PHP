@@ -22,6 +22,9 @@
 						<ul style="margin-left: 40px; font-size: 24px;">
 							<li>pl.wikibooks.org/wiki/PHP/</li>
 							<li>phpkurs.pl</li>
+							<li>devphp.sourceforge.net</li>
+							<li>wikipedia.com</li>
+							<li>vm5.eu/blog/php-7-infographic</li>
 						</ul>
 					</p>
 				</div>
