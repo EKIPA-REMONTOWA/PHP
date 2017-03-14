@@ -39,7 +39,7 @@ die('Nieprawidłowy parametr A!');
 // 3
 $delta = pow($_GET['b'], 2) - 4 * $_GET['a'] * $_GET['c'];
 // 4
-if($delta > 0)
+if($delta &#62; 0)
 {
 // 5
    echo 'Delta dodatnia. Dwa rozwiązania:<ul>';
@@ -47,7 +47,7 @@ if($delta > 0)
    echo '<li>'.round((-$_GET['b']+sqrt($delta))/(2*$_GET['a']), 5).'</li>';
    echo '</ul>';
 }
-elseif($delta < 0)
+elseif($delta &#60; 0)
 {
 // 6
 echo 'Delta ujemna. Brak rozwiązań w zbiorze liczb rzeczywistych!';
